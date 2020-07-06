@@ -1,0 +1,21 @@
+CREATE OR REPLACE PACKAGE BODY LIQUIB.GET_Company AS
+
+
+  PROCEDURE GET_ROWCOUNT(sDBErrorDesc            OUT VARCHAR2,
+                           sProcAction             OUT VARCHAR2,
+                           sExpectedVersion     IN     VARCHAR2,
+                           bValidityCheckOnly   IN     INTEGER,
+                           sVersionFound        IN OUT VARCHAR2,
+                        flag OUT VARCHAR2)
+                        AS
+  rCount NUMBER (2);
+  BEGIN
+  rCount := 0;
+  SELECT COUNT(*) INTO rCount FROM liquib.company;
+  IF rCount > 0  THEN   flag := 'S';
+  ELSE  flag := 'E';
+  END if;
+  END;
+
+END GET_Company;
+/test
