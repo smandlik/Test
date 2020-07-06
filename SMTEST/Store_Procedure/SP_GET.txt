@@ -16,6 +16,6 @@ CREATE OR REPLACE PACKAGE BODY LIQUIB.GET_Company AS
   ELSE  flag := 'E';
   END if;
   END;
-
+/Seema Edited on 7/6
 END GET_Company;
 /
